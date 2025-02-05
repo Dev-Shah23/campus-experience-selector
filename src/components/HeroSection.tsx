@@ -1,20 +1,15 @@
 import { Users, Heart } from "lucide-react";
 import { OptionCard } from "./OptionCard";
-import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
-  const { toast } = useToast();
   const navigate = useNavigate();
 
   const handleOptionClick = (option: string) => {
     if (option === "Community Club") {
       navigate("/community");
-    } else {
-      toast({
-        title: "Coming Soon!",
-        description: `The ${option} feature will be available soon.`,
-      });
+    } else if (option === "Campus Dating") {
+      navigate("/dating");
     }
   };
 
