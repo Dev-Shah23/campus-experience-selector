@@ -8,6 +8,7 @@ import ClubsAndSocieties from "@/pages/ClubsAndSocieties";
 import Events from "@/pages/Events";
 import CampusMap from "@/pages/CampusMap";
 import Forums from "@/pages/Forums";
+import CampusDating from "@/pages/CampusDating";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/community/events" element={<Events />} />
         <Route path="/community/map" element={<CampusMap />} />
         <Route path="/community/forums" element={<Forums />} />
+        <Route path="/dating" element={<CampusDating />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
