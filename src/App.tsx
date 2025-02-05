@@ -8,6 +8,7 @@ import Forums from "./pages/Forums";
 import CampusMap from "./pages/CampusMap";
 import CampusDating from "./pages/CampusDating";
 import UserProfile from "./pages/UserProfile";
+import Verification from "./pages/Verification";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "./components/ui/toaster";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/map" element={<CampusMap />} />
         <Route path="/dating" element={<CampusDating />} />
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/verify" element={<Verification />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
