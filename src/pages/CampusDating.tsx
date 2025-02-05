@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, Heart, X, Filter } from "lucide-react";
+import { ChevronLeft, Heart, X, Filter, User } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { TinderCard } from "@/components/TinderCard";
@@ -39,7 +39,6 @@ const users: User[] = [
     interests: ["Sports", "Startups", "Travel"],
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
   },
-  // Add more users as needed
 ];
 
 const CampusDating = () => {
@@ -73,14 +72,24 @@ const CampusDating = () => {
             </Button>
             <h1 className="text-3xl font-bold">Campus Dating</h1>
           </div>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Filter className="h-6 w-6" />
-              </Button>
-            </DialogTrigger>
-            <FilterDialog />
-          </Dialog>
+          <div className="flex items-center gap-2">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Filter className="h-6 w-6" />
+                </Button>
+              </DialogTrigger>
+              <FilterDialog />
+            </Dialog>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => navigate("/profile")}
+              className="hover:bg-primary/10"
+            >
+              <User className="h-6 w-6" />
+            </Button>
+          </div>
         </div>
 
         <div className="relative h-[600px] w-full">
