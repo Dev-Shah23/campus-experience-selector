@@ -9,31 +9,31 @@ const CommunityClub = () => {
     {
       title: "Class Connections",
       description: "Join study groups and connect with classmates",
-      icon: <Grid className="w-6 h-6 text-primary" />,
+      icon: <Grid className="w-6 h-6 text-[#FF00FF]" />,
       path: "/community/classes"
     },
     {
       title: "Clubs & Societies",
       description: "Discover and join student organizations",
-      icon: <Users className="w-6 h-6 text-primary" />,
+      icon: <Users className="w-6 h-6 text-[#FF00FF]" />,
       path: "/community/clubs"
     },
     {
       title: "Events",
       description: "Browse and RSVP to campus events",
-      icon: <Calendar className="w-6 h-6 text-primary" />,
+      icon: <Calendar className="w-6 h-6 text-[#FF00FF]" />,
       path: "/community/events"
     },
     {
       title: "Campus Map",
       description: "Find meeting spots and important locations",
-      icon: <MapPin className="w-6 h-6 text-primary" />,
+      icon: <MapPin className="w-6 h-6 text-[#FF00FF]" />,
       path: "/community/map"
     },
     {
       title: "Forums",
       description: "Engage in discussions with fellow students",
-      icon: <MessageSquare className="w-6 h-6 text-primary" />,
+      icon: <MessageSquare className="w-6 h-6 text-[#FF00FF]" />,
       path: "/community/forums"
     }
   ];

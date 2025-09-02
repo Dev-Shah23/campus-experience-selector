@@ -14,8 +14,8 @@ export const Navbar = () => {
   return (
     <nav className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-lg border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-          CampusConnect
+        <h1 className="text-xl font-bold bg-gradient-to-r from-[#FF00FF] via-[#FF69B4] bg-clip-text text-transparent">
+          Clikk
         </h1>
         
         <div className="flex items-center gap-4">

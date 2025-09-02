@@ -29,13 +29,13 @@ export const HeroSection = () => {
           <OptionCard
             title="Community Club"
             description="Join study groups, clubs, and connect with peers who share your interests"
-            icon={<Users className="w-6 h-6 text-primary" />}
+            icon={<Users className="w-6 h-6 text-[#FF00FF]" />}
             onClick={() => handleOptionClick("Community Club")}
           />
           <OptionCard
             title="Campus Dating"
-            description="Meet new people and find meaningful relationships within your campus"
-            icon={<Heart className="w-6 h-6 text-primary" />}
+            description="Meet new people and find meaningful relationships within Manipal"
+            icon={<Heart className="w-6 h-6 text-[#FF00FF]" />}
             onClick={() => handleOptionClick("Campus Dating")}
           />
         </div>

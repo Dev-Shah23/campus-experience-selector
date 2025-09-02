@@ -1,4 +1,9 @@
-import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import { Card } from "@/components/ui/card";
 
 interface User {
@@ -15,10 +20,16 @@ interface User {
 interface TinderCardProps {
   user: User;
   isActive: boolean;
-  onSwipe: (direction: 'left' | 'right') => void;
+  onSwipe: (direction: "left" | "right") => void;
+  onClick?: () => void; // ✅ Ensure onClick is included
 }
 
-export const TinderCard = ({ user, isActive, onSwipe }: TinderCardProps) => {
+export const TinderCard = ({
+  user,
+  isActive,
+  onSwipe,
+  onClick,
+}: TinderCardProps) => {
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-25, 25]);
   const opacity = useTransform(x, [-200, 0, 200], [0, 1, 0]);
@@ -27,7 +38,7 @@ export const TinderCard = ({ user, isActive, onSwipe }: TinderCardProps) => {
   const handleDragEnd = () => {
     const xVal = x.get();
     if (Math.abs(xVal) > 100) {
-      onSwipe(xVal > 0 ? 'right' : 'left');
+      onSwipe(xVal > 0 ? "right" : "left");
     }
   };
 
@@ -45,6 +56,7 @@ export const TinderCard = ({ user, isActive, onSwipe }: TinderCardProps) => {
         onDragEnd={handleDragEnd}
         whileDrag={{ cursor: "grabbing" }}
         className="absolute w-full cursor-grab"
+        onClick={onClick} // ✅ Ensure onClick is actually used
       >
         <Card className="overflow-hidden animate-fade-in">
           <div className="relative h-[500px]">
@@ -54,8 +66,12 @@ export const TinderCard = ({ user, isActive, onSwipe }: TinderCardProps) => {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
-              <h3 className="text-2xl font-bold">{user.name}, {user.age}</h3>
-              <p className="text-lg">{user.major} • {user.year}</p>
+              <h3 className="text-2xl font-bold">
+                {user.name}, {user.age}
+              </h3>
+              <p className="text-lg">
+                {user.major} • {user.year}
+              </p>
               <p className="mt-2">{user.bio}</p>
               <div className="flex flex-wrap gap-2 mt-3">
                 {user.interests.map((interest, index) => (
